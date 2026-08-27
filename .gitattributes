@@ -1,0 +1,13 @@
+# Default: normalize text to LF in the object store, native endings on checkout.
+* text=auto
+
+# Hash-verified provenance fixtures must be byte-identical on every platform.
+# Any EOL conversion changes their SHA-256 and fails check_ioc_provenance.
+# Matches both the .agents and .claude skill mirrors.
+**/scripts/fixtures/** -text
+
+# POSIX launcher must keep LF even when checked out on Windows.
+*.sh text eol=lf
+
+# Windows batch files rely on CRLF.
+*.bat text eol=crlf
