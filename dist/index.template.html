@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HuntPack Library — Local</title>
+<style>
+:root{--bg:#0d1117;--panel:#0d1a18;--panel2:#122420;--border:#30363d;--text:#e6edf3;--muted:#8ba39c;--accent:#02c39a;--green:#3fb950;--yellow:#d29922;--red:#f85149;--purple:#a78bfa}
+*{box-sizing:border-box;margin:0;padding:0}body{min-height:100vh;background:radial-gradient(circle at 80% 0,rgba(2,195,154,.065),transparent 32%),var(--bg);color:var(--text);font:14px/1.6 "Segoe UI",Inter,Arial,sans-serif;padding:34px 20px 86px}.wrap{max-width:1040px;margin:0 auto}
+.hero{position:relative;overflow:hidden;margin-bottom:20px;padding:34px 36px 29px;border:1px solid rgba(2,195,154,.38);border-radius:13px;background:radial-gradient(circle at 88% 12%,rgba(2,195,154,.2),transparent 34%),linear-gradient(140deg,#06231d,#0d1a18 60%,#122420);box-shadow:0 18px 48px rgba(0,0,0,.3)}.hero:after{content:"";position:absolute;right:-58px;bottom:-116px;width:315px;height:315px;border:1px solid rgba(2,195,154,.12);border-radius:50%}.brand{position:relative;z-index:1;display:flex;align-items:center;gap:10px;color:var(--accent);font-size:10px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}.mark{display:grid;place-items:center;width:32px;height:32px;border:1px solid rgba(2,195,154,.48);border-radius:8px;background:rgba(2,195,154,.09);font-size:10px;letter-spacing:0}.hero h1{position:relative;z-index:1;margin-top:15px;font-size:clamp(31px,5vw,49px);line-height:1.02;letter-spacing:-.045em}.hero .sub{position:relative;z-index:1;max-width:700px;margin-top:12px;color:#abb7c3;font-size:14px}.local-badge{position:relative;z-index:1;display:inline-block;margin-top:14px;padding:3px 9px;border:1px solid rgba(63,185,80,.42);border-radius:999px;background:rgba(63,185,80,.1);color:#7ee787;font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}.stat{padding:14px 16px;border:1px solid var(--border);border-radius:9px;background:var(--panel)}.stat-value{display:block;color:var(--accent);font:800 23px/1.1 "Cascadia Code",Consolas,monospace}.stat-label{display:block;margin-top:5px;color:#73808e;font-size:9px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+.library{overflow:hidden;border:1px solid var(--border);border-radius:11px;background:var(--panel);box-shadow:0 8px 25px rgba(0,0,0,.15)}.library-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:15px 16px;border-bottom:1px solid var(--border);background:linear-gradient(90deg,var(--panel2),var(--panel))}.library-head h2{margin-right:auto;font-size:15px}.search{min-width:230px;padding:8px 10px;border:1px solid var(--border);border-radius:7px;background:#0b1614;color:var(--text);font:inherit}.search:focus{outline:2px solid var(--accent);outline-offset:1px}.filters{display:flex;gap:6px;flex-wrap:wrap;padding:11px 16px;border-bottom:1px solid var(--border)}.filter{padding:4px 9px;border:1px solid var(--border);border-radius:999px;background:transparent;color:var(--muted);font-size:10px;cursor:pointer}.filter:hover,.filter.active{border-color:rgba(2,195,154,.52);background:rgba(2,195,154,.09);color:var(--accent)}
+.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:12px}th{padding:9px 13px;background:#122420;color:#758190;text-align:left;font-size:9px;letter-spacing:.09em;text-transform:uppercase}td{padding:11px 13px;border-top:1px solid var(--border);vertical-align:top}tr.hunt-row:hover td{background:var(--panel2)}a{color:var(--accent);text-decoration:none;font-weight:700}a:hover{text-decoration:underline}.date{color:var(--muted);white-space:nowrap}.num{color:var(--muted);text-align:center}.chip{display:inline-block;padding:2px 7px;border-radius:999px;font-size:9px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}.chip-ransomware{background:rgba(210,153,34,.15);color:#e3b341}.chip-apt{background:rgba(248,81,73,.15);color:#ff7b72}.chip-identity{background:rgba(167,139,250,.14);color:#c4b5fd}.chip-network{background:rgba(2,195,154,.14);color:#52d6ba}.chip-cloud{background:rgba(63,185,80,.14);color:#7ee787}.chip-general{background:rgba(88,166,255,.14);color:#58a6ff}.empty{text-align:center;color:var(--muted);padding:36px 14px!important}.empty code{color:#bdc8d3}.foot{margin-top:16px;color:#687482;text-align:center;font-size:10px;letter-spacing:.04em}
+@media(max-width:700px){body{padding:16px 11px 60px}.hero{padding:26px 20px}.stats{grid-template-columns:repeat(2,1fr)}.library-head{align-items:stretch}.library-head h2{width:100%}.search{width:100%;min-width:0}th,td{padding:9px}.hero h1{font-size:34px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="brand"><span class="mark">HP</span>HuntPack Local</div>
+    <h1>Your threat hunt library.</h1>
+    <p class="sub">Portable, analyst-ready CrowdStrike HuntPacks created locally by Claude Code or Codex. Each pack is a single offline HTML file with queries, evidence, validation gates, and response guidance.</p>
+    <span class="local-badge">Generated hunts stay local</span>
+  </header>
+
+  <section class="stats" aria-label="Library statistics">
+    <div class="stat"><span class="stat-value" id="stat-hunts">0</span><span class="stat-label">HuntPacks</span></div>
+    <div class="stat"><span class="stat-value" id="stat-queries">0</span><span class="stat-label">Queries</span></div>
+    <div class="stat"><span class="stat-value" id="stat-cves">0</span><span class="stat-label">Tracked CVEs</span></div>
+    <div class="stat"><span class="stat-value" id="stat-latest">—</span><span class="stat-label">Latest pack</span></div>
+  </section>
+
+  <section class="library">
+    <div class="library-head"><h2>HuntPacks</h2><input class="search" id="hunt-search" type="search" placeholder="Search threats, CVEs, and aliases…" aria-label="Search HuntPacks"></div>
+    <div class="filters" aria-label="Filter by threat type">
+      <button class="filter active" type="button" data-filter="all">All</button><button class="filter" type="button" data-filter="ransomware">Ransomware</button><button class="filter" type="button" data-filter="apt">APT</button><button class="filter" type="button" data-filter="identity">Identity</button><button class="filter" type="button" data-filter="network">Network</button><button class="filter" type="button" data-filter="cloud">Cloud</button><button class="filter" type="button" data-filter="general">General</button>
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Threat</th><th>Date</th><th>Type</th><th>Queries</th></tr></thead>
+      <tbody>
+        <!-- HUNTPACK-INDEX:INSERT -->
+        <tr id="empty-state"><td class="empty" colspan="4">No hunts yet &mdash; name a threat, or ask Codex or Claude Code to “build a HuntPack for the latest relevant threat.”</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <div class="foot">HUNTPACK LOCAL · newest first · optional scope: TECH_STACK.md</div>
+</div>
+<script>
+(function(){
+  var rows=[].slice.call(document.querySelectorAll('.hunt-row')),search=document.getElementById('hunt-search'),active='all';
+  function rowType(row){var chip=row.querySelector('.chip');return chip?chip.textContent.trim().toLowerCase():'general'}
+  function apply(){var q=search.value.trim().toLowerCase(),shown=0;rows.forEach(function(row){var text=(row.textContent+' '+(row.dataset.cves||'')+' '+(row.dataset.aliases||'')).toLowerCase(),okType=active==='all'||rowType(row)===active,okText=!q||text.indexOf(q)!==-1;row.hidden=!(okType&&okText);if(!row.hidden)shown++});var empty=document.getElementById('empty-state');if(empty)empty.hidden=rows.length>0&&shown>0}
+  document.querySelectorAll('.filter').forEach(function(btn){btn.addEventListener('click',function(){active=btn.dataset.filter;document.querySelectorAll('.filter').forEach(function(x){x.classList.toggle('active',x===btn)});apply()})});search.addEventListener('input',apply);
+  var queries=0,cves={};rows.forEach(function(row){queries+=parseInt((row.querySelector('.num')||{}).textContent,10)||0;(row.dataset.cves||'').split(',').forEach(function(cve){cve=cve.trim();if(cve)cves[cve]=1})});document.getElementById('stat-hunts').textContent=rows.length;document.getElementById('stat-queries').textContent=queries;document.getElementById('stat-cves').textContent=Object.keys(cves).length;if(rows.length){var d=rows[0].querySelector('.date');document.getElementById('stat-latest').textContent=d?d.textContent.trim():'—'}apply();
+})();
+</script>
+</body>
+</html>
+

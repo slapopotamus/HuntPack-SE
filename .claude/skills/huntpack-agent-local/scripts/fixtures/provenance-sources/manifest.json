@@ -1,0 +1,17 @@
+{
+  "sources": [
+    {
+      "accessed_utc": "2026-08-19T00:00:00Z",
+      "claim_ids": ["C01"],
+      "independence_group": "vendor",
+      "ioc_ids": ["I01"],
+      "publisher": "Example Vendor",
+      "retrieval_status": "ok",
+      "sha256": "19ce0da4ce9156a13eadcf252deb73404f19bd28749be2a6c02de33ed1e1c4da",
+      "snapshot": "S01-source.txt",
+      "source_id": "S01",
+      "tier": "T1",
+      "url": "https://vendor.example/report"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+name: framework checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  cross-platform:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run portable preflight and validator self-tests
+        run: python scripts/doctor.py
+      - name: Exercise ad-hoc runner without starting an agent
+        run: python scripts/huntpack.py Scattered Spider --agent prompt --dry-run
+      - name: Check POSIX launcher syntax
+        if: runner.os != 'Windows'
+        run: sh -n quick-start.sh
+      - name: Check PowerShell scripts parse
+        shell: pwsh
+        run: |
+          $failed = $false
+          foreach ($script in @('./quick-start.ps1', './dist/build-dist.ps1')) {
+            $errors = $null
+            [void][System.Management.Automation.Language.Parser]::ParseFile((Resolve-Path $script), [ref]$null, [ref]$errors)
+            if ($errors) { Write-Host "Parse errors in $script"; $errors | Format-List; $failed = $true }
+          }
+          if ($failed) { exit 1 }

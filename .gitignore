@@ -1,0 +1,36 @@
+# Per-deployment environment data
+TECH_STACK.md
+.claude/settings.local.json
+settings.local.*
+
+# Mutable local HuntPack state
+index.html
+.runs/
+packs/**
+!packs/.gitkeep
+
+# Distribution build artifacts
+dist/*.zip
+dist/releases/*.zip
+dist/.build-*/
+dist/staging*/
+
+# Review and temporary working material
+REVIEW_PROMPT.md
+refactor-work/
+provenance-test-*/
+
+# OS/editor noise
+Thumbs.db
+.DS_Store
+*.swp
+
+# Interpreter caches; committing them breaks Claude/Codex mirror parity
+__pycache__/
+*.pyc
+
+# Transient index lock
+.index.lock
+
+# Unpacked distribution copy of this project (exact duplicate)
+/Huntpack_SE/
